@@ -11,8 +11,7 @@ import os
 
 from flask import Flask, render_template
 
-# templates/ e static/ ficam na raiz do projeto (fora do pacote "app"),
-# então precisamos indicar os caminhos explicitamente.
+
 _DIRETORIO_RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _PASTA_TEMPLATES = os.path.join(_DIRETORIO_RAIZ, "templates")
 _PASTA_STATIC = os.path.join(_DIRETORIO_RAIZ, "static")
@@ -30,7 +29,7 @@ def create_app(config_extra=None):
     if config_extra:
         app.config.update(config_extra)
 
-    # Garante que a pasta onde o arquivo .sqlite será criado existe.
+    
     os.makedirs(os.path.dirname(app.config["DATABASE"]), exist_ok=True)
 
     from . import db

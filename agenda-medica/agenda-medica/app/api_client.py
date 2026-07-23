@@ -10,7 +10,7 @@ tratamento de erros consistente em toda a aplicação.
 import requests
 from flask import current_app
 
-# Campos que a aplicação exige em cada agendamento retornado pela API.
+# Campos que a aplicação
 CAMPOS_OBRIGATORIOS = [
     "paciente",
     "cpf",
@@ -74,7 +74,7 @@ def buscar_agendamentos():
             "A API de agendamentos retornou uma resposta inválida (JSON malformado)."
         ) from exc
 
-    # Resposta vazia é tratada como "nenhum agendamento", não como erro.
+    # Resposta vazia é tratada como nenhum agendamento
     if dados is None:
         return []
 

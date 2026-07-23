@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-  # API simulada de agendamentos (serviço separado dentro do projeto).
+  # API simulada de agendamentos 
   mock_api:
     build: ./mock_api
     container_name: agenda_mock_api
@@ -10,7 +10,7 @@ services:
     environment:
       - SIMULAR_FALHA=0
 
-  # Aplicação principal: login + tela da agenda.
+  # Aplicação principal
   web:
     build: .
     container_name: agenda_medica_web

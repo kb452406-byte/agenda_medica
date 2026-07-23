@@ -31,7 +31,7 @@ def login_required(view):
 @bp.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "GET":
-        # Se o usuário já está logado, não faz sentido mostrar o login de novo.
+        # Se o usuário já está logado
         if session.get("usuario_id") is not None:
             return redirect(url_for("agenda.index"))
         return render_template("login.html")
@@ -39,7 +39,7 @@ def login():
     usuario_ou_email = request.form.get("usuario", "").strip()
     senha = request.form.get("senha", "")
 
-    # Campos obrigatórios ausentes: validamos antes de tocar no banco.
+    # Campos obrigatórios ausentes
     if not usuario_ou_email or not senha:
         flash("Informe usuário/e-mail e senha.", "erro")
         return render_template("login.html"), 400
