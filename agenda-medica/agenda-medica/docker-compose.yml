@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  # API simulada de agendamentos (serviço separado dentro do projeto).
+  mock_api:
+    build: ./mock_api
+    container_name: agenda_mock_api
+    ports:
+      - "5001:5001"
+    environment:
+      - SIMULAR_FALHA=0
+
+  # Aplicação principal: login + tela da agenda.
+  web:
+    build: .
+    container_name: agenda_medica_web
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=chave-secreta-para-desenvolvimento
+      - API_URL=http://mock_api:5001/agendamentos
+      - DATABASE_PATH=/app/instance/agenda_medica.sqlite
+    volumes:
+      - agenda_db:/app/instance
+    depends_on:
+      - mock_api
+
+volumes:
+  agenda_db:

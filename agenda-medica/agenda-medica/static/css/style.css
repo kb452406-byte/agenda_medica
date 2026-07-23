@@ -1,0 +1,166 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #222;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+/* --- Tela de login --- */
+
+.card-login {
+    max-width: 360px;
+    margin: 80px auto;
+    background: #fff;
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.card-login h1 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 24px;
+}
+
+.card-login form {
+    text-align: left;
+}
+
+.card-login label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: #444;
+}
+
+.card-login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.card-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.card-login button:hover {
+    background-color: #1e4fc4;
+}
+
+.dica {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #777;
+}
+
+.alerta {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    text-align: left;
+}
+
+.alerta-erro {
+    background-color: #fdecea;
+    color: #b3261e;
+    border: 1px solid #f5c2c0;
+}
+
+/* --- Tela da agenda --- */
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.topo h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.usuario-info a {
+    margin-left: 12px;
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.busca {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.busca input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.busca button {
+    padding: 10px 16px;
+    background-color: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.busca button.secundario {
+    background-color: #e5e7eb;
+    color: #333;
+}
+
+.mensagem-status {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.mensagem-erro {
+    background-color: #fdecea;
+    color: #b3261e;
+    border: 1px solid #f5c2c0;
+}
+
+.mensagem-aviso {
+    background-color: #fff8e1;
+    color: #8a6d00;
+    border: 1px solid #ffe08a;
+}
+
+#tabela-agendamentos {
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+}

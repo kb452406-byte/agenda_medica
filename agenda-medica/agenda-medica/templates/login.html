@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %}Login - Agenda Médica{% endblock %}
+
+{% block conteudo %}
+<div class="card-login">
+    <h1>Agenda Médica</h1>
+    <p class="subtitulo">Acesse com seu usuário ou e-mail</p>
+
+    {% with mensagens = get_flashed_messages(with_categories=true) %}
+        {% if mensagens %}
+            {% for categoria, mensagem in mensagens %}
+                <div class="alerta alerta-{{ categoria }}">{{ mensagem }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" action="{{ url_for('auth.login') }}">
+        <label for="usuario">Usuário ou e-mail</label>
+        <input type="text" id="usuario" name="usuario" required autofocus>
+
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" name="senha" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <p class="dica">Usuário de teste: <strong>medico</strong> &nbsp;|&nbsp; senha: <strong>123456</strong></p>
+</div>
+{% endblock %}

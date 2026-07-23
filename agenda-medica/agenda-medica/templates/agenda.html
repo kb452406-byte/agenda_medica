@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block titulo %}Agenda Médica{% endblock %}
+
+{% block conteudo %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.5.2/css/tabulator.min.css" rel="stylesheet">
+
+<header class="topo">
+    <h1>Agenda Médica</h1>
+    <div class="usuario-info">
+        <span>Olá, {{ usuario_nome }}</span>
+        <a href="{{ url_for('auth.logout') }}">Sair</a>
+    </div>
+</header>
+
+<div class="busca">
+    <input type="text" id="campo-busca" placeholder="Buscar por paciente, CPF ou médico">
+    <button id="botao-buscar">Buscar</button>
+    <button id="botao-limpar" class="secundario">Limpar</button>
+</div>
+
+<div id="mensagem-status" class="mensagem-status" style="display:none;"></div>
+
+<div id="tabela-agendamentos"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/5.5.2/js/tabulator.min.js"></script>
+<script src="{{ url_for('static', filename='js/agenda.js') }}"></script>
+{% endblock %}
