@@ -1,4 +1,5 @@
 Agenda Médica
+
 Aplicação web simples de agenda médica, feita em Python com Flask. Permite login de usuário, consulta de agendamentos vindos de uma API (simulada como um serviço HTTP separado) e busca por paciente, CPF ou médico, exibindo os dados em uma tabela interativa (Tabulator).
 
 Estrutura do projeto
